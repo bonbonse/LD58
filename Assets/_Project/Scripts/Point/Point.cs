@@ -1,16 +1,13 @@
 using UnityEngine;
 
-public class Point : MonoBehaviour
+namespace Ludum.PointMovement
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class Point : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Point LeftPoint;
+        public Point UpPoint;
+        public Point RightPoint;
+        public Point DownPoint;
     }
 }
+

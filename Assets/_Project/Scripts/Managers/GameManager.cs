@@ -1,4 +1,4 @@
-using Ludum.Localization;
+using Ludum.PointMovement;
 using UnityEngine;
 
 namespace Ludum.Manager
@@ -9,6 +9,8 @@ namespace Ludum.Manager
         private static GameManager _instance;
 
         public bool IsFreeMovementState = true;
+        // Точка на которой стоит Игрок
+        public Point currentPlayerPoint;
 
         // Singleton
         public static GameManager Instance
