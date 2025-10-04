@@ -5,10 +5,6 @@ namespace Ludum.UI
 {
     public class MenuUI : MonoBehaviour
     {
-        void Start()
-        {
-
-        }
 
         /**
          * Обработчик нажатия на Играть
