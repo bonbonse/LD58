@@ -1,3 +1,5 @@
+using Ludum.Localization;
+using System.Collections;
 using UnityEngine;
 
 namespace Ludum.Manager
@@ -6,9 +8,15 @@ namespace Ludum.Manager
     {
         // Singleton
         private static SubtitleManager _instance;
+        // default time to wait and clear subtitle
+        private float _defaultLifeTimeSubtitle = 4f;
+
+        private Language _language = null;
 
         [SerializeField]
         private TMPro.TextMeshProUGUI _subtitleTMPro;
+        [SerializeField]
+        private TMPro.TextMeshProUGUI _helpTMPro;
 
         // Singleton
         public static SubtitleManager Instance
@@ -34,12 +42,28 @@ namespace Ludum.Manager
             if (_instance == null)
             {
                 _instance = this;
-                DontDestroyOnLoad(gameObject);
             }
             else
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void Start()
+        {
+            int languageNumber = PlayerPrefs.GetInt("language_number");
+            if (languageNumber == Language.LanguageEN)
+            {
+                // English
+                _language = new LanguageEN();
+            }
+            else
+            {
+                // Rus
+                _language = new LanguageRU();
+            }
+            ShowHelp(false);
+            ShowSubtitle(false);
         }
 
         /**
@@ -50,8 +74,49 @@ namespace Ludum.Manager
             Instance._subtitleTMPro.gameObject.SetActive(show);
         }
         /**
+         * Add subtitle
          * Change subtitle text and show
+         * @TODO когда сделаем в меню кнопку смены языков - добавить здесь код на смену
          */
+        public static void Say(Dialog dialog)
+        {
+            Debug.Log(dialog);
+            Debug.Log(Instance._language);
+            string text = Instance._language.GetText(dialog);
+            Instance._subtitleTMPro.SetText(text);
+            Instance.StopAllCoroutines();
+            ShowSubtitle(true);
+            Instance.StartCoroutine(Instance.WaitAndHideSubtitle(Instance._defaultLifeTimeSubtitle));
+        }
+        /**
+        * Add subtitle
+        * Change subtitle text and show
+        * @TODO когда сделаем в меню кнопку смены языков - добавить здесь код на смену
+        */
+        public static void SayDialogs (Dialog dialog, float time)
+        {
+            string text = Instance._language.GetText(dialog);
+            Instance._subtitleTMPro.SetText(text);
+            Instance.StopAllCoroutines();
+            ShowSubtitle(true);
+            Instance.StartCoroutine(Instance.WaitAndHideSubtitle(time));
+        }
+
+        /**
+         * Wait and Delete Subtitle
+         */
+        private IEnumerator WaitAndHideSubtitle(float time)
+        {
+            yield return new WaitForSeconds(time);
+            ShowSubtitle(false);
+        }
+        /**
+         * show help or hide
+         */
+        public void ShowHelp(bool show)
+        {
+            _helpTMPro.gameObject.SetActive(show);
+        }
     }
 }
 

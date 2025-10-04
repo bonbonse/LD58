@@ -1,3 +1,4 @@
+using Ludum.Localization;
 using UnityEngine;
 
 namespace Ludum.Manager
@@ -33,7 +34,6 @@ namespace Ludum.Manager
             if (_instance == null)
             {
                 _instance = this;
-                DontDestroyOnLoad(gameObject);
             }
             else
             {
@@ -41,6 +41,9 @@ namespace Ludum.Manager
             }
         }
 
+        private void Start()
+        {
+        }
 
         // Methods
 
