@@ -7,6 +7,7 @@ namespace Ludum.Animations
     {
         public float DeltaTime = 0.01f;
         public bool Loop = true;
+        public bool DestroyAfterEnd = true;
 
         protected Material targetMaterial;
         public Texture2D[] sprites;
@@ -29,9 +30,16 @@ namespace Ludum.Animations
             StartAnimation();
         }
 
+        public void StartAnimationWithNewSprites(Texture2D[] newSprites)
+        {
+            sprites = newSprites;
+            StartAnimation();
+        }
+
 
         public void StartAnimation()
         {
+            StopAllCoroutines();
             currentIndex = 0;
             StartCoroutine(WaitAndNextSprite());
         }
@@ -56,15 +64,17 @@ namespace Ludum.Animations
                 }
                 else
                 {
+                    if (DestroyAfterEnd)
+                    {
+                        gameObject.SetActive(false);
+                    }
                     ChangeSpriteByIndex(0);
                     yield return null;
                 }
             }
             currentIndex++;
             ChangeSpriteByIndex(currentIndex);
-            Debug.Log(currentIndex);
             StartCoroutine(WaitAndNextSprite());
-
         }
     }
 }
