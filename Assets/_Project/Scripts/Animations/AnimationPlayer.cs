@@ -5,7 +5,7 @@ namespace Ludum.Animations
 {
     public class AnimationPlayer : MonoBehaviour
     {
-        public float DeltaTime = 0;
+        public float DeltaTime = 0.01f;
         public bool Loop = true;
 
         protected Material targetMaterial;
@@ -42,7 +42,6 @@ namespace Ludum.Animations
             if (sprites != null && index >= 0 && index < sprites.Length)
             {
                 targetMaterial.mainTexture = sprites[index];
-                StartCoroutine(WaitAndNextSprite());
             }
         }
 
@@ -61,8 +60,11 @@ namespace Ludum.Animations
                     yield return null;
                 }
             }
-            ChangeSpriteByIndex(currentIndex);
             currentIndex++;
+            ChangeSpriteByIndex(currentIndex);
+            Debug.Log(currentIndex);
+            StartCoroutine(WaitAndNextSprite());
+
         }
     }
 }
