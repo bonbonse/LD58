@@ -22,6 +22,7 @@ namespace Ludum.Quest
         private AnimationPlayer animPlayer = null;
 
         private List<Texture2D[]> allSprites = new List<Texture2D[]>();
+        private float defaultTime = 150f;
 
         private void Start()
         {
@@ -60,7 +61,7 @@ namespace Ludum.Quest
             {
                 return false;
             }
-            SubtitleManager.Say(dialogs[currentSceneCount]);
+            SubtitleManager.Say(dialogs[currentSceneCount], defaultTime);
             animPlayer.StartAnimationWithNewSprites(allSprites[currentSceneCount]);
             currentSceneCount++;
             if (currentSceneCount > maxSceneCount)
@@ -69,6 +70,10 @@ namespace Ludum.Quest
             }
 
             return true;
+        }
+        public void DestroyBich()
+        {
+            animPlayer.gameObject.SetActive(false);
         }
     }
 

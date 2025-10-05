@@ -5,6 +5,8 @@ namespace Ludum.Localization
     public enum Dialog
     {
         Test,
-        Test2
+        Test2,
+        BichDialog1,
+        BichDialog2,
     }
 }

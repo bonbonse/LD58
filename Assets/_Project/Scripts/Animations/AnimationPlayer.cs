@@ -8,6 +8,7 @@ namespace Ludum.Animations
         public float DeltaTime = 0.01f;
         public bool Loop = true;
         public bool DestroyAfterEnd = true;
+        public bool onAwake = true;
 
         protected Material targetMaterial;
         public Texture2D[] sprites;
@@ -27,7 +28,10 @@ namespace Ludum.Animations
             {
                 targetMaterial = meshRenderer.materials[0];
             }
-            StartAnimation();
+            if (onAwake)
+            {
+                StartAnimation();
+            }
         }
 
         public void StartAnimationWithNewSprites(Texture2D[] newSprites)
