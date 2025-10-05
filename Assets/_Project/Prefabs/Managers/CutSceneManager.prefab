@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1469118473716840161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5292752665683891907}
+  - component: {fileID: 6098250022317596254}
+  - component: {fileID: 1112890542937761326}
+  m_Layer: 0
+  m_Name: BichDialogPlace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5292752665683891907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469118473716840161}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.203, y: 1.373, z: -2.143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7097577366501095974}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6098250022317596254
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469118473716840161}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.3458221
+  m_Center: {x: 0.3979571, y: 0.447865, z: 0}
+--- !u!114 &1112890542937761326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469118473716840161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069de1c4fbca99a44aed6b84e0a7be3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ludum.Quest.BichTalkingQuest
+  dialogs: 0000000001000000
+  sprites1:
+  - {fileID: 2800000, guid: 456d1849763497d468ee2ade17931027, type: 3}
+  - {fileID: 2800000, guid: 21156ad3f1cb1d143aa820b503ac1ce2, type: 3}
+  - {fileID: 2800000, guid: 77553cce5457c064792a1cc77e535e1a, type: 3}
+  - {fileID: 2800000, guid: 33c4e79f55def834e90ed4ecaf7a8579, type: 3}
+  - {fileID: 2800000, guid: d80306937a8952c428de2192d33d6934, type: 3}
+  - {fileID: 2800000, guid: 3735bf0fc2a247e478f0239355ef2a94, type: 3}
+  - {fileID: 2800000, guid: 39441e2495571f144a4f51a848c352e8, type: 3}
+  - {fileID: 2800000, guid: 4708f9864ac45c14ca14004bb8a17e71, type: 3}
+  - {fileID: 2800000, guid: 719aa907de0e40942bd541ec9617d4cf, type: 3}
+  - {fileID: 2800000, guid: b33d8e55cbfdbe74da5a276a2a5d624f, type: 3}
+  - {fileID: 2800000, guid: 389cda34459e01f4ea7075a6ba240eb2, type: 3}
+  - {fileID: 2800000, guid: 5b07869b827b4884b8b23fb1be48e9e4, type: 3}
+  - {fileID: 2800000, guid: 834345c325652ae44ad9053009a5fa47, type: 3}
+  - {fileID: 2800000, guid: 2ea8c9650ad986b4f9a9990b89882eab, type: 3}
+  - {fileID: 2800000, guid: 3f8b6eca2de5a3c4cbeae4422165f85d, type: 3}
+  - {fileID: 2800000, guid: 2354067ba18c4274a926f47e2c0f0031, type: 3}
+  - {fileID: 2800000, guid: fd71875831546f948baf7ae1ab25e516, type: 3}
+  - {fileID: 2800000, guid: 26fc08b05e7be6c479df65d3965798d1, type: 3}
+  - {fileID: 2800000, guid: 09fd5accbaa76fe4a8c4ecaa7a7b2bc9, type: 3}
+  - {fileID: 2800000, guid: a9a810433556e6844829961c096b9868, type: 3}
+  - {fileID: 2800000, guid: cef71d579f3cbe24eaa93a6b313ed660, type: 3}
+  - {fileID: 2800000, guid: 31baf40804acf1945954fed700aab275, type: 3}
+  - {fileID: 2800000, guid: e737e106c9bdd394ea60de76b705e160, type: 3}
+  - {fileID: 2800000, guid: e1e3cd73c860cf447ba651a3df64b3c8, type: 3}
+  - {fileID: 2800000, guid: 335f38696bd279d4898ad419fef5dcb8, type: 3}
+  - {fileID: 2800000, guid: 252ed18a58865744c9fd76eec9e3e93b, type: 3}
+  - {fileID: 2800000, guid: 3d77d82a1455b334eb598be31064c1a4, type: 3}
+  - {fileID: 2800000, guid: 75043c2bb4cea4a439715c63e2ae4edb, type: 3}
+  - {fileID: 2800000, guid: e5857f2e37a29ac4db617eb108d929d1, type: 3}
+  sprites2:
+  - {fileID: 2800000, guid: aca559bc506c5614f8bf63ff2db50089, type: 3}
+  - {fileID: 2800000, guid: 90947ce708bf16e4aa2dfc654af45206, type: 3}
+  - {fileID: 2800000, guid: 6134a9458efc26445a7567d0ae24aaa6, type: 3}
+  - {fileID: 2800000, guid: 901960988a35ca74d944d66d39fd418d, type: 3}
+  - {fileID: 2800000, guid: be4b3e1f48d27094ea96d853cc3284e0, type: 3}
+  - {fileID: 2800000, guid: 5a3e6ead3cfa497429fdd4f4020a57db, type: 3}
+  - {fileID: 2800000, guid: 0f3e70d87b3330d4390333d986c41de1, type: 3}
+  - {fileID: 2800000, guid: c9816f5d7aa1a9943b5b9a94fdf64162, type: 3}
+  - {fileID: 2800000, guid: e4943b92acb4f2d4395c92afe0e8c97b, type: 3}
+  - {fileID: 2800000, guid: 418ac9e4a18720645a7ef7a421eb557c, type: 3}
+  - {fileID: 2800000, guid: ee69a0eb8600f974e955620d0721af4b, type: 3}
+  - {fileID: 2800000, guid: 43eba88cb126d76448f597c1638e883a, type: 3}
+  - {fileID: 2800000, guid: 806b738d07792774a92e52b67ae01175, type: 3}
+  - {fileID: 2800000, guid: 37a511f0cef46cd40a1d5f4847d1fddd, type: 3}
+  - {fileID: 2800000, guid: f71ba13112c0c084a96bc4e40037b681, type: 3}
+  - {fileID: 2800000, guid: 5e1d0682c20818e44a27364e1b20b695, type: 3}
+  - {fileID: 2800000, guid: 972bd3c6f116c4c4bac8853197a95162, type: 3}
+  - {fileID: 2800000, guid: 9c7e813a268dccd4287ed23f655dc4e8, type: 3}
+  - {fileID: 2800000, guid: af3b0cd00c5bb1a4097e87e1adcc2c24, type: 3}
+  - {fileID: 2800000, guid: 9babbab3212bd69489650b38f8832513, type: 3}
+  - {fileID: 2800000, guid: d8556d946b9843941a685f64e2f5fccc, type: 3}
+  bichMeshRenderer: {fileID: 0}
+--- !u!1 &2203751779681856783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7097577366501095974}
+  m_Layer: 0
+  m_Name: CutSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7097577366501095974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2203751779681856783}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5292752665683891907}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
