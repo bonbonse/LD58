@@ -11,6 +11,9 @@ namespace Ludum.Quest
         private static BichTalkingQuest _instance;
         public static BichTalkingQuest Instance => _instance;
 
+        public AudioClip[] audioClips = null;
+        private AudioSource audioSource = null;
+
         public List<Dialog> dialogs = new List<Dialog>();
         public Texture2D[] sprites1 = null;
         public Texture2D[] sprites2 = null;
@@ -26,6 +29,7 @@ namespace Ludum.Quest
 
         private void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             if (_instance != null && _instance != this)
             {
                 Destroy(gameObject);
@@ -62,6 +66,9 @@ namespace Ludum.Quest
                 return false;
             }
             SubtitleManager.Say(dialogs[currentSceneCount], defaultTime);
+            audioSource.resource = audioClips[currentSceneCount];
+            audioSource.Play();
+
             animPlayer.StartAnimationWithNewSprites(allSprites[currentSceneCount]);
             currentSceneCount++;
             if (currentSceneCount > maxSceneCount)

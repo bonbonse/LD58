@@ -11,7 +11,7 @@ namespace Ludum.UI
          */
         public void PlayBtnClick()
         {
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("FirstScene");
         }
         /**
          * Выход из игры
