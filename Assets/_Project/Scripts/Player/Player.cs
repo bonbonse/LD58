@@ -14,7 +14,7 @@ namespace Ludum.Character
         [SerializeField] float maxLookDownAngle = 80f;
 
         [Header("References")]
-        [SerializeField] Transform playerCamera;
+        [SerializeField] Transform playerCameraTransform;
         [SerializeField] Rigidbody playerRigidbody;
 		
 		[Header("Footsteps")]
@@ -22,12 +22,10 @@ namespace Ludum.Character
 		[SerializeField] AudioSource audioSource;
 		[SerializeField] float stepRate = 0.5f;
 		float stepTimer;
-
+		
         private float speed;
 		private float xRotation = 0f;
         private Vector3 moveDirection;
-
-        // Input
         private float mouseX, mouseY;
         private float horizontal, vertical;
 
@@ -73,7 +71,7 @@ namespace Ludum.Character
         {
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -maxLookDownAngle, maxLookUpAngle);
-            playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerCameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
             transform.Rotate(Vector3.up * mouseX);
         }
@@ -119,9 +117,9 @@ namespace Ludum.Character
 
         void Reset()
         {
-            if (playerCamera == null)
+            if (playerCameraTransform == null)
             {
-                playerCamera = GetComponentInChildren<Camera>()?.transform;
+                playerCameraTransform = GetComponentInChildren<Camera>()?.transform;
             }
 
             if (playerRigidbody == null)
