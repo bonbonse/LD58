@@ -39,6 +39,8 @@ namespace Ludum.GameState
         {
             //// Восстанавливаем нормальное время
             //Time.timeScale = 1f;
+            CutSceneManager.DestroyBich();
+            SubtitleManager.ShowSubtitle(false);
         }
 
         private void SkipCutscene()

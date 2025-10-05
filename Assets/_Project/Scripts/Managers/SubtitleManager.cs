@@ -80,8 +80,6 @@ namespace Ludum.Manager
          */
         public static void Say(Dialog dialog)
         {
-            Debug.Log(dialog);
-            Debug.Log(Instance._language);
             string text = Instance._language.GetText(dialog);
             Instance._subtitleTMPro.SetText(text);
             Instance.StopAllCoroutines();
@@ -93,7 +91,7 @@ namespace Ludum.Manager
         * Change subtitle text and show
         * @TODO когда сделаем в меню кнопку смены языков - добавить здесь код на смену
         */
-        public static void SayDialogs (Dialog dialog, float time)
+        public static void Say(Dialog dialog, float time)
         {
             string text = Instance._language.GetText(dialog);
             Instance._subtitleTMPro.SetText(text);

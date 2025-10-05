@@ -5,6 +5,7 @@ namespace Ludum.Manager
 {
     public class CutSceneManager : MonoBehaviour
     {
+        public GameObject bich;
         public static bool isLastScene = false;
         public static void StartBichTalkQuest()
         {
@@ -18,6 +19,10 @@ namespace Ludum.Manager
         public static void NextScene()
         {
             isLastScene = !BichTalkingQuest.Instance.NextScene();
+        }
+        public static void DestroyBich()
+        {
+            BichTalkingQuest.Instance.DestroyBich();
         }
     }
 }
