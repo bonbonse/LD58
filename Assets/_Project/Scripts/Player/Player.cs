@@ -14,20 +14,25 @@ namespace Ludum.Character
         [SerializeField] float maxLookDownAngle = 80f;
 
         [Header("References")]
-        [SerializeField] Transform playerCamera;
+        [SerializeField] Transform playerCameraTransform;
         [SerializeField] Rigidbody playerRigidbody;
-
+		
+		[Header("Footsteps")]
+		[SerializeField] AudioClip[] steps;
+		[SerializeField] AudioSource audioSource;
+		[SerializeField] float stepRate = 0.5f;
+		float stepTimer;
+		
         private float speed;
 		private float xRotation = 0f;
         private Vector3 moveDirection;
-
-        // Input
         private float mouseX, mouseY;
         private float horizontal, vertical;
 
         void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            stepTimer = stepRate;
+			Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
             if (playerRigidbody == null)
@@ -55,8 +60,8 @@ namespace Ludum.Character
             mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-            horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
 
             moveDirection = (transform.right * horizontal + transform.forward * vertical).normalized;
 
@@ -66,7 +71,7 @@ namespace Ludum.Character
         {
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -maxLookDownAngle, maxLookUpAngle);
-            playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerCameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
             transform.Rotate(Vector3.up * mouseX);
         }
@@ -77,8 +82,18 @@ namespace Ludum.Character
 			if (Math.Abs(Vector3.Angle(moveDirection, Vector3.forward)) > 90) {
 				speed *= 0.8f;
 			};
+
 			
-			transform.position += moveDirection * speed;
+			playerRigidbody.linearVelocity = moveDirection * speed;
+			
+			if (moveDirection != Vector3.zero){
+				stepTimer -= Time.fixedDeltaTime;
+				if (stepTimer <= 0){
+					int i = UnityEngine.Random.Range(0, steps.Length);
+					audioSource.PlayOneShot(steps[i]);
+					stepTimer = stepRate;
+				}
+			}
         }
 
         public void SetMouseSensitivity(float sensitivity)
@@ -102,9 +117,9 @@ namespace Ludum.Character
 
         void Reset()
         {
-            if (playerCamera == null)
+            if (playerCameraTransform == null)
             {
-                playerCamera = GetComponentInChildren<Camera>()?.transform;
+                playerCameraTransform = GetComponentInChildren<Camera>()?.transform;
             }
 
             if (playerRigidbody == null)
