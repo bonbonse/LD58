@@ -82,11 +82,12 @@ namespace Ludum.Character
 			if (Math.Abs(Vector3.Angle(moveDirection, Vector3.forward)) > 90) {
 				speed *= 0.8f;
 			};
-
 			
-			playerRigidbody.linearVelocity = moveDirection * speed;
+			float velocityY = playerRigidbody.linearVelocity.y;
+			playerRigidbody.linearVelocity = moveDirection * speed + velocityY * Vector3.up;
 			
-			if (moveDirection != Vector3.zero){
+			
+			if (playerRigidbody.linearVelocity != Vector3.zero){
 				stepTimer -= Time.fixedDeltaTime;
 				if (stepTimer <= 0){
 					int i = UnityEngine.Random.Range(0, steps.Length);
