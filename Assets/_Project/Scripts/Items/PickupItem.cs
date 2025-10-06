@@ -39,13 +39,13 @@ public class PickupItem : MonoBehaviour
                 pickedUpVersion.SetActive(true);
 				audioSource.PlayOneShot(pickupSound);
 				//tmpText.text = "";
-                SubtitleManager.ShowSubtitle(false);
-				Destroy(this.gameObject);
+                SubtitleManager.ShowHelp(false);
+                Destroy(this.gameObject);
             }
 		}
 	}
 	
 	private void OnTriggerExit(){
-        SubtitleManager.ShowSubtitle(false);
+        SubtitleManager.ShowHelp(false);
     }
 }

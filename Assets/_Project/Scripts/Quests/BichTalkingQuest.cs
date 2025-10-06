@@ -16,6 +16,7 @@ namespace Ludum.Quest
         private AudioSource audioSource = null;
 
         public List<Dialog> dialogs = new List<Dialog>();
+        public Dialog help = Dialog.PressSpaceForContinue;
         public Texture2D[] sprites1 = null;
         public Texture2D[] sprites2 = null;
         public MeshRenderer bichMeshRenderer = null;
@@ -66,11 +67,12 @@ namespace Ludum.Quest
         {
             if (currentSceneCount >= allSprites.Count)
             {
-                
 				return false;
             }
             SubtitleManager.Say(dialogs[currentSceneCount], defaultTime);
-			hintText.text = "[Press Space to next dialog]";
+            SubtitleManager.HelpMessage(help);
+
+            hintText.text = "[Press Space to next dialog]";
             audioSource.resource = audioClips[currentSceneCount];
             audioSource.Play();
 

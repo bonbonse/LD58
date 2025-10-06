@@ -22,6 +22,7 @@ namespace Ludum.Manager
         }
         public static void DestroyBich()
         {
+            SubtitleManager.ShowHelp(false);
             BichTalkingQuest.Instance.DestroyBich();
         }
     }

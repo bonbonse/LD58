@@ -78,9 +78,9 @@ namespace Ludum.Manager
          */
         public static void HelpMessage(Dialog dialog)
         {
-            ShowSubtitle(true);
+            ShowHelp(true);
             string text = Instance._language.GetText(dialog);
-            Instance._subtitleTMPro.SetText(text);
+            Instance._helpTMPro.SetText(text);
         }
         /**
          * Add subtitle
@@ -120,9 +120,9 @@ namespace Ludum.Manager
         /**
          * show help or hide
          */
-        public void ShowHelp(bool show)
+        public static void ShowHelp(bool show)
         {
-            _helpTMPro.gameObject.SetActive(show);
+            Instance._helpTMPro.gameObject.SetActive(show);
         }
     }
 }

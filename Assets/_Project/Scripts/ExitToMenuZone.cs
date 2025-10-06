@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Ludum.Manager;
+using Ludum.Localization;
 
 public class ExitToMenuZone : MonoBehaviour
 {
@@ -24,8 +26,8 @@ public class ExitToMenuZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInExitZone = true;
-            hintText.text = "[Press E to exit]";
             // Можно добавить UI подсказку
+            SubtitleManager.HelpMessage(Dialog.PressE);
         }
     }
     
@@ -34,8 +36,8 @@ public class ExitToMenuZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInExitZone = false;
-            hintText.text = "";
             // Убрать UI подсказку
+            SubtitleManager.ShowHelp(false);
         }
     }
     
