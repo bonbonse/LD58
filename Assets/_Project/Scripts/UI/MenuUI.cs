@@ -6,7 +6,7 @@ namespace Ludum.UI
 {
     public class MenuUI : MonoBehaviour
     {
-        int currentLanguageNumber = Language.LanguageRU;
+        int currentLanguageNumber = Language.LanguageEN;
         public TMPro.TextMeshProUGUI PlayTMPro;
         public TMPro.TextMeshProUGUI ExitTMPro;
         public TMPro.TextMeshProUGUI LanguageTMPro;
