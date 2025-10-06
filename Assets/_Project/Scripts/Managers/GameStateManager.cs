@@ -25,7 +25,6 @@ namespace Ludum.Manager
             }
 
             _instance = this;
-            DontDestroyOnLoad(gameObject);
 
             InitializeStates();
         }

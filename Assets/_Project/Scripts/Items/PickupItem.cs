@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using Ludum.Manager;
 using Ludum.Localization;
+using Ludum.Scrimer;
 
 public class PickupItem : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PickupItem : MonoBehaviour
 	[SerializeField] KeyCode pickupKey = KeyCode.E;
 	[SerializeField] AudioSource audioSource;
 	[SerializeField] TextMeshProUGUI tmpText;
+    public GameObject Scrimer;
     
     [SerializeField] enum ItemType
     {
@@ -30,7 +32,11 @@ public class PickupItem : MonoBehaviour
 		if(other.gameObject.tag == "Player"){
 			SubtitleManager.HelpMessage(Dialog.PressE);
 			if (Input.GetKey(pickupKey)){
-				pickedUpVersion.SetActive(true);
+                Scrimer.SetActive(true);
+                ScrimerMity mity = Scrimer.GetComponent<ScrimerMity>();
+                mity.On();
+
+                pickedUpVersion.SetActive(true);
 				audioSource.PlayOneShot(pickupSound);
 				//tmpText.text = "";
                 SubtitleManager.ShowSubtitle(false);
