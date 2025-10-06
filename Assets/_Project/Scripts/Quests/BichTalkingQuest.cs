@@ -3,6 +3,7 @@ using Ludum.Localization;
 using Ludum.Manager;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace Ludum.Quest
 {
@@ -18,6 +19,8 @@ namespace Ludum.Quest
         public Texture2D[] sprites1 = null;
         public Texture2D[] sprites2 = null;
         public MeshRenderer bichMeshRenderer = null;
+		
+		public TextMeshProUGUI hintText;
 
         private int currentSceneCount = 0;
         private int maxSceneCount = 1;
@@ -63,9 +66,11 @@ namespace Ludum.Quest
         {
             if (currentSceneCount >= allSprites.Count)
             {
-                return false;
+                
+				return false;
             }
             SubtitleManager.Say(dialogs[currentSceneCount], defaultTime);
+			hintText.text = "[Press Space to next dialog]";
             audioSource.resource = audioClips[currentSceneCount];
             audioSource.Play();
 
@@ -73,7 +78,9 @@ namespace Ludum.Quest
             currentSceneCount++;
             if (currentSceneCount > maxSceneCount)
             {
-                return false;
+                audioSource.Stop();
+				hintText.text = "";
+				return false;
             }
 
             return true;
