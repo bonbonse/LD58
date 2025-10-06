@@ -60,6 +60,7 @@ namespace Ludum.Animations
         protected IEnumerator WaitAndNextSprite()
         {
             yield return new WaitForSeconds(DeltaTime);
+            currentIndex++;
             if (currentIndex >= sprites.Length)
             {
                 if (Loop)
@@ -76,7 +77,6 @@ namespace Ludum.Animations
                     yield return null;
                 }
             }
-            currentIndex++;
             ChangeSpriteByIndex(currentIndex);
             StartCoroutine(WaitAndNextSprite());
         }
