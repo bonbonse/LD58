@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using Ludum.Manager;
+using Ludum.Localization;
 
 public class PickupItem : MonoBehaviour
 {
@@ -26,19 +28,18 @@ public class PickupItem : MonoBehaviour
 
     private void OnTriggerStay(Collider other){
 		if(other.gameObject.tag == "Player"){
-			tmpText.text = "[Press E to pick up Flashlight]";
+			SubtitleManager.HelpMessage(Dialog.PressE);
 			if (Input.GetKey(pickupKey)){
-				Debug.Log("Picked Up!");
 				pickedUpVersion.SetActive(true);
 				audioSource.PlayOneShot(pickupSound);
-				tmpText.text = "";
+				//tmpText.text = "";
+                SubtitleManager.ShowSubtitle(false);
 				Destroy(this.gameObject);
-				
-			}
+            }
 		}
 	}
 	
 	private void OnTriggerExit(){
-		tmpText.text = "";
-	}
+        SubtitleManager.ShowSubtitle(false);
+    }
 }

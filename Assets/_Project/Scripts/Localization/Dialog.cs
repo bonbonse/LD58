@@ -8,5 +8,7 @@ namespace Ludum.Localization
         Test2,
         BichDialog1,
         BichDialog2,
+        PressE,
+        PressSpaceForContinue,
     }
 }

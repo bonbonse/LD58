@@ -74,6 +74,15 @@ namespace Ludum.Manager
             Instance._subtitleTMPro.gameObject.SetActive(show);
         }
         /**
+         * Show Subtitle
+         */
+        public static void HelpMessage(Dialog dialog)
+        {
+            ShowSubtitle(true);
+            string text = Instance._language.GetText(dialog);
+            Instance._subtitleTMPro.SetText(text);
+        }
+        /**
          * Add subtitle
          * Change subtitle text and show
          * @TODO когда сделаем в меню кнопку смены языков - добавить здесь код на смену
