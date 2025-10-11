@@ -52,16 +52,16 @@ namespace Ludum.Manager
         private void Start()
         {
             int languageNumber = PlayerPrefs.GetInt("language_number");
-            if (languageNumber == Language.LanguageEN)
-            {
+            //if (languageNumber == Language.LanguageRU)
+            //{
+            //    // Rus
+            //    _language = new LanguageRU();
+            //}
+            //else
+            //{
                 // English
                 _language = new LanguageEN();
-            }
-            else
-            {
-                // Rus
-                _language = new LanguageRU();
-            }
+            //}
             ShowHelp(false);
             ShowSubtitle(false);
         }
