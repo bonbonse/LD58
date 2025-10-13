@@ -26,6 +26,19 @@ namespace Ludum.Quest.Common
         {
             Completed = true;
         }
+
+        public void DoQuest(int doCount)
+        {
+            if (!Completed)
+            {
+                currenctQuestAction.AddToDone(doCount);
+                if (currenctQuestAction.Completed)
+                {
+
+                }
+            }
+            
+        }
     }
 }
 

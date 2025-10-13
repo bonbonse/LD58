@@ -4,7 +4,7 @@ namespace Ludum.Quest.Quest
 {
     public class StartQuest : AbstractQuest
     {
-        public override string Name { get => "Стартовый квест"; }
+        public override string Name { get => "StartQuest"; }
         
     }
 
