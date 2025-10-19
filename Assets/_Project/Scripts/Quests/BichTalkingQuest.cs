@@ -92,5 +92,4 @@ namespace Ludum.Quest
             animPlayer.gameObject.SetActive(false);
         }
     }
-
 }
