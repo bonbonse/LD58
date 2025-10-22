@@ -2483,6 +2483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 218267335}
+  - component: {fileID: 218267336}
   m_Layer: 0
   m_Name: QuestManager
   m_TagString: Untagged
@@ -2505,6 +2506,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 211871764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &218267336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218267334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68118a5879400aa4188fca0e0ace9d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ludum.Manager.QuestManager
 --- !u!4 &218489855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1afa8fce97c8ba0498296d53bbc37ad0, type: 3}
@@ -12903,6 +12916,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CutSceneManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3376881626913139910, guid: f6fef5341dea518458b40d86ff3599a0, type: 3}
+      propertyPath: bich
+      value: 
+      objectReference: {fileID: 2097912411}
     - target: {fileID: 4049822212467753674, guid: f6fef5341dea518458b40d86ff3599a0, type: 3}
       propertyPath: m_Volume
       value: 0.2
@@ -12950,10 +12967,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2203751779681856783, guid: f6fef5341dea518458b40d86ff3599a0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1498579561}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6fef5341dea518458b40d86ff3599a0, type: 3}
 --- !u!4 &1335767279 stripped
 Transform:
@@ -14472,24 +14486,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 709098269}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 233.935}
---- !u!1 &1498579560 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2203751779681856783, guid: f6fef5341dea518458b40d86ff3599a0, type: 3}
-  m_PrefabInstance: {fileID: 1335767278}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1498579561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498579560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 552dbf37826e2eb48bdbe019a77ba613, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Ludum.Manager.CutSceneManager
-  bich: {fileID: 0}
 --- !u!1001 &1503519618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17236,6 +17232,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1236448863715623998, guid: e8ed69c6c054b894983b7b3a8f54401d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.000315
+      objectReference: {fileID: 0}
+    - target: {fileID: 1236448863715623998, guid: e8ed69c6c054b894983b7b3a8f54401d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.66
       objectReference: {fileID: 0}
@@ -18707,6 +18707,11 @@ RectTransform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1afa8fce97c8ba0498296d53bbc37ad0, type: 3}
   m_PrefabInstance: {fileID: 1503519618}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2097912411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1729416902957225255, guid: e8ed69c6c054b894983b7b3a8f54401d, type: 3}
+  m_PrefabInstance: {fileID: 1914401525}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2106023184
 PrefabInstance:
